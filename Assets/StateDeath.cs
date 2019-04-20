@@ -13,7 +13,7 @@ public class StateDeath : FSMState
 
     public StateDeath()
     {
-        stateID = StateID.Death;
+        //stateID = StateID.Death;
     }
 
     public override void Act( GameObject npc)
@@ -23,11 +23,9 @@ public class StateDeath : FSMState
 
     public override void Reason( GameObject npc)
     {
-        if (this.GetComponent<FSMswordman>().nyawa<=0)
-        {
-            Destroy(this.gameObject, 2); //choose the right transition if there are more than 1 transition
-        }
+        //if (this.GetComponent<FSMswordman>().nyawa<=0)
+        //{
+        //    Destroy(this.gameObject, 2); //choose the right transition if there are more than 1 transition
+        //}
     }
-
-
 }

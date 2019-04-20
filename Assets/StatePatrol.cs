@@ -13,7 +13,7 @@ public class StatePatrol : FSMState
 
     public StatePatrol()
     {
-        stateID = StateID.Patrol;
+        //stateID = StateID.Patrol;
     }
 
     public override void Act( GameObject npc)
@@ -23,14 +23,14 @@ public class StatePatrol : FSMState
 
     public override void Reason( GameObject npc)
     {
-        if (this.GetComponent<FSMswordman>().nyawa <= 0)
-        {
-            BaseFSMsystem.PerformTransition(transitions[1]);
-        }
-        else   if (this.GetComponent<FSMswordman>().isAdaMusuh)
-        {
-            BaseFSMsystem.PerformTransition(transitions[0]); //choose the right transition if there are more than 1 transition
-        }
+        //if (this.GetComponent<FSMswordman>().nyawa <= 0)
+        //{
+        //    BaseFSMsystem.PerformTransition(transitions[1]);
+        //}
+        //else   if (this.GetComponent<FSMswordman>().isAdaMusuh)
+        //{
+        //    BaseFSMsystem.PerformTransition(transitions[0]); //choose the right transition if there are more than 1 transition
+        //}
     }
 
 

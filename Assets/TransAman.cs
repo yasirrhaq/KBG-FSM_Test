@@ -6,7 +6,7 @@ public class TransAman : FSMtransition {
 
     public void Start()
     {
-        transition = "aman";
+        transition = "aman bossss";
     }
 
     public override void doInTransition()

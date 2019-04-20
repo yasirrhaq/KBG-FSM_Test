@@ -436,14 +436,15 @@ GameObject:
   - component: {fileID: 1217591443}
   - component: {fileID: 1217591444}
   - component: {fileID: 1217591436}
+  - component: {fileID: 1217591447}
+  - component: {fileID: 1217591446}
+  - component: {fileID: 1217591445}
   - component: {fileID: 1217591442}
   - component: {fileID: 1217591441}
   - component: {fileID: 1217591440}
-  - component: {fileID: 1217591446}
   - component: {fileID: 1217591439}
   - component: {fileID: 1217591438}
   - component: {fileID: 1217591437}
-  - component: {fileID: 1217591445}
   m_Layer: 0
   m_Name: FSM_TEST
   m_TagString: Untagged
@@ -464,12 +465,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 1217591442}
-  - {fileID: 1217591441}
-  - {fileID: 1217591440}
+  - {fileID: 1217591447}
   - {fileID: 1217591446}
-  currentStateID: 1
-  currentState: {fileID: 1217591442}
+  - {fileID: 1217591445}
+  - {fileID: 1217591442}
+  currentStateID: 5
+  currentState: {fileID: 1217591447}
 --- !u!114 &1217591437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,10 +480,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2616d9188f85c8408fd1791bb915139, type: 3}
+  m_Script: {fileID: 11500000, guid: 86575c76279c70e4182f74a06664ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStateID: 2
+  targetStateID: 1
   transition: 
 --- !u!114 &1217591438
 MonoBehaviour:
@@ -493,7 +494,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16f6b0e407b136146a26025fccc68ef7, type: 3}
+  m_Script: {fileID: 11500000, guid: 085b16c0c8ef3e2458dc1751f27cdaa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetStateID: 3
@@ -507,10 +508,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e4c2411fea4c849946b0c27d9614bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 73bb9addffddcca43ba717b801ea656c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStateID: 1
+  targetStateID: 4
   transition: 
 --- !u!114 &1217591440
 MonoBehaviour:
@@ -521,17 +522,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10d9f0af521fc4d44adb904fff828b3b, type: 3}
+  m_Script: {fileID: 11500000, guid: a42b2fccd157eb14b96ae87d67b21bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions:
-  - {fileID: 1217591437}
-  - {fileID: 1217591439}
-  - {fileID: 1217591445}
-  nyawa: 50
-  isAman: 0
-  BaseFSMsystem: {fileID: 1217591436}
-  result: {fileID: 939157984}
+  targetStateID: 2
+  transition: 
 --- !u!114 &1217591441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,14 +536,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba31d178a1fd6794b8061fa7edc88f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 697d7aaf137663848a5d1bca3612d2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitions:
-  - {fileID: 1217591439}
-  - {fileID: 1217591445}
-  BaseFSMsystem: {fileID: 1217591436}
-  result: {fileID: 939157984}
+  targetStateID: 1
+  transition: 
 --- !u!114 &1217591442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,12 +550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26dc9712fd9167345a4e9e06849924d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bedaea2980d0464c92523dbd1f9fdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
-  - {fileID: 1217591438}
-  - {fileID: 1217591445}
+  - {fileID: 1217591437}
   BaseFSMsystem: {fileID: 1217591436}
   result: {fileID: 939157984}
 --- !u!4 &1217591443
@@ -593,8 +584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FSMsystem: {fileID: 1217591436}
-  isAdaMusuh: 0
-  nyawa: 50
+  isEnemyNearby: 0
+  isMedKitNearby: 0
+  isBadKitNearby: 0
 --- !u!114 &1217591445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,11 +596,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d719ddf4a7cbec745b0754c1300c22f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 16fc70b958faa374ea5594fe070477b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStateID: 4
-  transition: 
+  transitions:
+  - {fileID: 1217591437}
+  BaseFSMsystem: {fileID: 1217591436}
+  result: {fileID: 939157984}
 --- !u!114 &1217591446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,11 +612,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217591435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdce6d83485cd9498cae89e97453ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: e493df52011099e4a9a2e63286c2d93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transitions:
-  - {fileID: 1217591445}
+  - {fileID: 1217591439}
+  - {fileID: 1217591440}
+  - {fileID: 1217591441}
+  BaseFSMsystem: {fileID: 1217591436}
+  result: {fileID: 939157984}
+--- !u!114 &1217591447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217591435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f015dfb878c14d24787e54cc606f3143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitions:
+  - {fileID: 1217591438}
+  - {fileID: 1217591439}
+  - {fileID: 1217591440}
   BaseFSMsystem: {fileID: 1217591436}
   result: {fileID: 939157984}
 --- !u!1 &1589579220

@@ -13,7 +13,7 @@ public class StateSerang : FSMState {
 
     public StateSerang()
     {
-        stateID = StateID.Serang;
+        //stateID = StateID.Serang;
     }
 
     public override void Act( GameObject npc)
@@ -23,17 +23,17 @@ public class StateSerang : FSMState {
 
     public override void Reason(GameObject npc)
     {
-        if (this.GetComponent<FSMswordman>().nyawa <= 0) {
-            BaseFSMsystem.PerformTransition(transitions[2]);
-        }
-        else if (this.GetComponent<FSMswordman>().nyawa < 50)
-        {
-            BaseFSMsystem.PerformTransition(transitions[0]); //choose the right transition if there are more than 1 transition
-        }
-        else if (!this.GetComponent<FSMswordman>().isAdaMusuh)
-        {
-            BaseFSMsystem.PerformTransition(transitions[1]);
-        }
+        //if (this.GetComponent<FSMswordman>().nyawa <= 0) {
+        //    BaseFSMsystem.PerformTransition(transitions[2]);
+        //}
+        //else if (this.GetComponent<FSMswordman>().nyawa < 50)
+        //{
+        //    BaseFSMsystem.PerformTransition(transitions[0]); //choose the right transition if there are more than 1 transition
+        //}
+        //else if (!this.GetComponent<FSMswordman>().isAdaMusuh)
+        //{
+        //    BaseFSMsystem.PerformTransition(transitions[1]);
+        //}
         
     }
 }

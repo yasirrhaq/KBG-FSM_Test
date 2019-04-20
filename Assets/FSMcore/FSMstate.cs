@@ -3,10 +3,14 @@
 public enum StateID
 {
     NullStateID = 0, // Use this ID to represent a non-existing State in your system	
-    Patrol = 1,
-    Lari = 2,
-    Serang = 3,
-    Death = 4,
+    //Patrol = 1,
+    //Lari = 2,
+    //Serang = 3,
+    //Death = 4,
+    Follow = 1,
+    RunAway = 2,
+    Hunt = 3,
+    CollectItem = 4
 }
 
 public abstract class FSMState : MonoBehaviour
